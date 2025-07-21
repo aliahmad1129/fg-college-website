@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <title>Faculty</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #feffcc 0%, #a6d3ff 100%);
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --main-dark: #002244;
+      --main-yellow: #ffc107;
+      --light-bg: #f7f9fc;
+    }
+
+    .container {
+      max-width: 1090px;
+      margin: 0 auto;
+    }
+
+
+    /* navbar */
+    .navbar-main {
+      background-color: #00264d;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      /* Navy Blue */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+    }
+
+    /* Logo Section */
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .clg-logo {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 50px;
+    }
+
+    .college-name {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      /* Vertically center links */
+      gap: 15px;
+      margin: 0;
+      /* Prevent vertical spacing */
+      padding: 0;
+      /* Remove list indent */
+    }
+
+    .nav-link li {
+      list-style: none;
+    }
+
+    .nav-link li a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    /* Active link */
+    .nav-link li a.active {
+      color: gold;
+    }
+
+    /* Hover Effect */
+    .nav-link li a:hover {
+      color: gold;
+    }
+
+    /* ---- */
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: -120px;
+      background-color: white;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      min-width: 180px;
+      z-index: 1000;
+    }
+
+    .dropdown-menu li a {
+      border-radius: 5px;
+      color: var(--main-dark) !important;
+      padding: 8px 16px;
+      display: block;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: var(--main-yellow);
+    }
+
+    /* Show dropdown on hover */
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* Dropdown arrow indicator */
+    .dropdown>a::after {
+      content: " ▼";
+      font-size: 0.7rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: "Fredoka", sans-serif;
+      color: var(--main-dark);
+      font-size: 40px;
+      font-weight: 600;
+      word-spacing: 5px;
+    }
+
+    .p-vp {
+      /* border: 1px solid rgb(0, 102, 255); */
+      display: grid;
+      grid-template-columns: 1fr 2px 1fr;
+      gap: 30px;
+      margin: 0 auto;
+      max-width: 700px;
+      /* border-bottom: 4px solid #002244;
+      border-top: 4px solid #002244; */
+      border-radius: 10px;
+      margin-bottom: 70px;
+    }
+
+    /* .principal {
+      border: 1px solid rgb(0, 255, 179);
+    } */
+
+    .principal .img {
+      overflow: hidden;
+      height: 280px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--main-dark);
+      border-radius: 5px;
+      margin-bottom: 30px;
+    }
+
+    .img img {
+      height: 100%;
+      width: 100%;
+
+    }
+
+    .card {
+      border-radius: 5px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      /* border: 1px solid gold; */
+      background-color: var(--light-bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px;
+      /* margin-bottom: 30px; */
+
+    }
+
+    .card h3 {
+
+      text-align: center;
+      font-size: 24px;
+      background-color: #002244;
+      color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      margin: 10px;
+    }
+
+    .card h4 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+      font-family: "Fredoka", sans-serif;
+    }
+
+    .line {
+      border: 2px solid #002244;
+      border-radius: 50px;
+    }
+
+    .vice-principal {
+      /* border: 1px solid magenta; */
+      height: 470px;
+    }
+
+    .fac {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .fac h2 {
+      margin-top: 50px;
+      color: var(--main-dark);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .faculty {
+      /* border: 1px solid goldenrod; */
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    .teach-card {
+      /* border: 1px solid maroon; */
+      background: linear-gradient(180deg, #feffcc 0%, #a6d3ff 100%);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+      border-radius: 5px;
+      /* height: 520px; */
+      padding: 28px;
+    }
+
+    .fac-image {
+      /* border: 1px solid rgb(73, 128, 0); */
+      height: 220px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+      border-radius: 50%;
+      background-color: var(--light-bg);
+      overflow: hidden;
+    }
+
+    .fac-image img {
+      height: 100%;
+      width: 100%;
+    
+    }
+
+    .fac-detail {
+      background-color: var(--light-bg);
+      /* border: 1px solid rgb(34, 0, 128); */
+      height: 170px;
+      padding: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+      border-radius: 7px;
+    }
+
+    .fac-detail h3 {
+      margin: 0;
+      text-align: center;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: var(--main-dark);
+      font-family: "Fredoka", sans-serif;
+      font-weight: 500;
+      color: var(--light-bg);
+    }
+
+    .fac-detail p {
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      font-weight: 500;
+      font-size: 17px;
+      margin-bottom: 5px;
+      margin-top: 10px;
+    }
+
+    .fac-detail ul {
+      list-style-type: circle;
+      margin: 0;
+      ;
+    }
+
+    .fac-detail ul li {
+      font-size: 14px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .logo {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 56px;
+      height: 56px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border: 2px solid white;
+      opacity: 0.85;
+      transition: opacity 0.3s;
+    }
+
+    .logo img:hover {
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--main-dark);
+      color: white;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="navbar-main">
+    <nav class="navbar container">
+      <a class="college-name" href="index.html">
+        <img class="clg-logo" src="logo.jpg" alt="College Logo" />
+        FG Science Degree College for men, Wah Cantt</a>
+      <ul class="nav-link">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        <li><a class=" active" href="faculty.html">Faculty</a></li>
+        <li><a href="admission.html">Admission Info</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="dropdown"><a href="#">More </a>
+          <ul class="dropdown-menu">
+            <li><a href="banner.html">Announements</a></li>
+            <li><a href="download.html">Downloads</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <h1>Our Esteemed Faculty</h1>
+  <section class="p-vp">
+    <div class="principal">
+      <div class="img">
+        <img src="principal.jpg" alt="">
+      </div>
+      <div class="card">
+        <h3>Principal</h3>
+        <h4>Mr. Azhar Qaiser</h4>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="principal">
+      <div class="img">
+        <img src="riaz.jpg" alt="">
+      </div>
+      <div class="card">
+        <h3>Vice Principal</h3>
+        <h4>Mr. Muhammad Riaz</h4>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- faculty -->
+  <section class="fac">
+    <h2>Faculty of English</h2>
+
+    <section class="faculty">
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="riaz.jpg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Muhammad Riaz</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>M.A (English)</li>
+            <li>M.A (Pol. Science)</li>
+            <li>M.A (Islamiyat)</li>
+            <li>B.Ed, (M.Ed)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="filler.jpg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Himayat Ali</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>M.A English (Silver Medalist) Shah Abdul Latif University, Sindh</li>
+            <li>B.Ed (University of the Punjab)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="shahzad.jpeg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Shahzad Anser</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>M.A English, University of Punjab</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+    <h2>Faculty of Urdu</h2>
+    <section class="faculty">
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="zafariqbal.jpeg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Zafar Iqbal</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>M.A Urdu (Punjab)</li>
+            <li>M.Phil (AIOU)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="filler.jpg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Ahmad Rizwan</h3>
+          <p>Lecturer</p>
+          <ul>
+            <li>M.A Urdu (University of sargodha)</li>
+            <li>M.Phil Education (Southern Punjab University, Multan)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="filler.jpg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Tasawar Abbas</h3>
+          <p>Lecturer</p>
+          <ul>
+            <li>M.Phil Urdu (GCUF)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+    <h2>Faculty of Physics</h2>
+    <section class="faculty">
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="shabraiz.jpeg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Shabraiz Hussain</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>M.Sc Physics (University of Balochistan)</li>
+            <li>M.Ed</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="farooq.png" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Dr. Muhammad Farooq</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>M.S Physics (Comsats, Wah)</li>
+            <li>PhD Scholar (Comsats, Islamabad)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="faisal.jpg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Dr. Faisal Mehmood</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>M.Sc Physics (PU, Lahore)</li>
+            <li>PhD Physics (IIU, Islamabad)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+    <h2>Faculty of Computer Science</h2>
+    <section class="faculty">
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="umair.jpeg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Muhammad Umair</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>MCS (Comsats)</li>
+            <li>MS (FAST)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="filler.jpg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Ms. Rohama Javed</h3>
+          <p>Lecturer</p>
+          <ul>
+            <li>MS.CS (Comsats, Wah)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="filler.jpg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Muhammad Musa</h3>
+          <p>Lecturer</p>
+          <ul>
+            <li>MS.CS (UCI, Wah)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+    <h2>Faculty of Mathematics</h2>
+    <section class="faculty">
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="tahir.png" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Tahir Mehmood</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>M.Sc Mathematics (P.U)</li>
+            <li>B.Ed</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="rafique.jpeg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Muhammad Rafique</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>M.Sc Mathematics (Punjab)</li>
+            <li>M.Ed</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="filler.jpg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Muhammad Husnain Shahzad</h3>
+          <p>Lecturer</p>
+          <ul>
+            <li>PhD Mathematics (P.U)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+    <h2>Faculty of Chemistry</h2>
+    <section class="faculty">
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="ashfaq.jpg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Dr. Muhammad Ashfaq Ahmad</h3>
+          <p>Lecturer</p>
+          <ul>
+            <li>PhD (University of Wah)</li>
+            <li>M.Ed (University of Sargodha)</li>
+            <li>B.Ed, (AIOU)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="filler.jpg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Javed Iqbal</h3>
+          <p>SST</p>
+          <ul>
+            <li>M.Phil Chemistry(BZU, Multan)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+    <h2>Faculty of Islamic Studies</h2>
+    <section class="faculty">
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="abuulbashar.jpg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Dr. Abul Bashar</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>B.Ed (AIOU)</li>
+            <li>Fazal Arabic (RWP Board)</li>
+            <li>M.A Islamiyat (I.U.U.I)</li>
+            <li>M.Phil Arabic, (I.U.U.I)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+    <h2>Faculty of Statistics</h2>
+    <section class="faculty">
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="filler.jpg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Ijaz Ahmad Mirza</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>M.Sc Statistics (I.U.B)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+    <h2>Faculty of Biology</h2>
+    <section class="faculty">
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="khalid.jpeg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Dr. Syed Khalid Hassan Kazmi</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>M.Sc Zoology (University of Balochistan)</li>
+            <li>B.Ed</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+    <h2>Faculty of Health & Physical Education</h2>
+    <section class="faculty">
+      <div class="teach-card">
+        <div class="fac-image">
+          <img src="g.mustafa.jpeg" alt="">
+        </div>
+        <div class="fac-detail">
+          <h3>Mr. Ghulam Mustafa</h3>
+          <p>Associate Professor</p>
+          <ul>
+            <li>MSc Physical Education (AIOU, Islamabad)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </section>
+
+   <div class="logo">
+    <img src="logo.jpg" alt="">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      <p class="mb-1">&copy; 2025 FG Science Degree College. All rights reserved.</p>
+      <small>Powered by HTML, CSS & Bootstrap.</small>
+    </div>
+  </footer>
+
+</body>
+
+</html>

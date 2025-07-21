@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - FG Science Degree College</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --main-dark: #002244;
+      --main-yellow: #ffc107;
+      --light-bg: #f7f9fc;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--light-bg);
+    }
+
+    .container {
+      max-width: 1090px;
+      margin: 0 auto;
+    }
+
+
+    /* navbar */
+    .navbar-main {
+      background-color: #00264d;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      /* Navy Blue */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Logo Section */
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .clg-logo {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 50px;
+    }
+
+    .college-name {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      /* Vertically center links */
+      gap: 15px;
+      margin-bottom: 0;
+      /* Prevent vertical spacing */
+      padding-left: 0;
+      /* Remove list indent */
+    }
+
+    .nav-link li {
+      list-style: none;
+    }
+
+    .nav-link li a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    /* Active link */
+    .nav-link li a.active {
+      color: gold;
+    }
+
+    /* Hover Effect */
+    .nav-link li a:hover {
+      color: gold;
+    }
+
+    /* ---- */
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: -120px;
+      background-color: white;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      min-width: 180px;
+      z-index: 1000;
+    }
+
+    .dropdown-menu li a {
+      border-radius: 5px;
+      color: var(--main-dark) !important;
+      padding: 8px 16px;
+      display: block;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: var(--main-yellow);
+    }
+
+    /* Show dropdown on hover */
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* Dropdown arrow indicator */
+    .dropdown>a::after {
+      content: " ▼";
+      font-size: 0.7rem;
+    }
+
+    .contact-section {
+      padding: 60px 0;
+    }
+
+    .contact-header {
+      color: var(--main-dark);
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-weight: 500;
+      color: var(--main-dark);
+    }
+
+    .logo {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border: 2px solid white;
+      opacity: 0.85;
+      transition: opacity 0.3s;
+    }
+
+    .logo img:hover {
+      opacity: 1;
+    }
+
+    .btn-yellow {
+      background-color: var(--main-yellow);
+      color: var(--main-dark);
+      font-weight: 600;
+    }
+
+    .btn-yellow:hover {
+      background-color: var(--main-yellow);
+    }
+
+    .form-control {
+      border: 1px solid #a6a7a8;
+    }
+
+    footer {
+      background-color: var(--main-dark);
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar-main">
+    <nav class="navbar container">
+      <a class="college-name" href="index.html">
+        <img class="clg-logo" src="logo.jpg" alt="College Logo" />
+        FG Science Degree College for men, Wah Cantt</a>
+      <ul class="nav-link">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="admission.html">Admission Info</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a class=" active" href="contact.html">Contact</a></li>
+        <li class="dropdown"><a href="#">More </a>
+          <ul class="dropdown-menu">
+            <li><a href="banner.html">Announements</a></li>
+            <li><a href="download.html">Downloads</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+
+      <!-- College Details -->
+      <h2 class="text-center contact-header">College Contact Information</h2>
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-8">
+          <p><strong>Address:</strong> Officer Colony Main Road, FG Science Degree College, Wah Cantt, Punjab 47040,
+            Pakistan</p>
+          <p><strong>Phone:</strong> (051) 1234567</p>
+          <p><strong>Email:</strong> info@fgcollege.edu.pk</p>
+          <p><strong>Timings:</strong> Mon – Fri, 8:00 AM – 2:00 PM</p>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-10">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.515115169412!2d72.72443421134265!3d33.77319373230187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfa799f8b92011%3A0x14bf0f2826db2378!2sF.G.%20Science%20Degree%20College%20For%20Men!5e0!3m2!1sen!2s!4v1752777027467!5m2!1sen!2s"
+            width="100%" height="450" style="border: 1px solid var(--main-dark); border-radius: 10px;"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <h2 class="text-center contact-header">Send Us a Message</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-yellow">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <div class="logo">
+    <img src="logo.jpg" alt="">
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      &copy; 2025 FG Science Degree College, Wah Cantt. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
